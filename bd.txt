@@ -1,0 +1,158 @@
+Use Master
+go
+
+if exists(Select * from sys.databases  Where name='Practicando1')
+Begin
+	Drop Database Practicando1
+End
+go
+
+create database Practicando1
+go
+
+USE Practicando1
+go
+
+set dateformat ymd
+go
+
+create table tb_categoria (
+idcategoria int not null primary key,
+descripcioncate varchar (50)null, 
+)
+go
+
+insert into tb_categoria values (1,'Phone')
+insert into tb_categoria values (2,'Cellphone')
+insert into tb_categoria values (3,'Traductor')
+insert into tb_categoria values (4,'Pc')
+insert into tb_categoria values (5,'Laptop')
+insert into tb_categoria values (6,'Ingeniero')
+insert into tb_categoria values (7,'Protipo')
+insert into tb_categoria values (8,'Seleccion')
+insert into tb_categoria values (9,'Noticias')
+insert into tb_categoria values (10,'Atv')
+
+
+
+
+CREATE TABLE [tb_empleado] (
+    [tb_empleadoID] INTEGER NOT NULL IDENTITY(1, 1),
+    [nombre] VARCHAR(255) NULL,
+    [email] VARCHAR(255) NULL,
+    [fecha] VARCHAR(255) NULL,
+    [idcategoria] INTEGER NULL,
+    PRIMARY KEY ([tb_empleadoID])
+);
+GO
+
+INSERT INTO [tb_empleado] (nombre,email,fecha,idcategoria)
+VALUES
+  ('Hedy Hunter','dis@aol.net','2021-01-03 02:13:43',5),
+  ('Zachery Hall','non@yahoo.couk','2022-10-06 09:39:33',3),
+  ('Kaitlin Brown','suspendisse.commodo.tincidunt@outlook.net','2023-04-03 17:12:48',6),
+  ('Melissa Buckner','nascetur.ridiculus@yahoo.com','2020-11-24 21:00:58',4),
+  ('Deacon Warren','at.iaculis@outlook.couk','2022-08-12 22:05:08',4),
+  ('Debra Miranda','elit.fermentum.risus@outlook.couk','2023-02-17 19:05:52',2),
+  ('Rosalyn Ayala','a.ultricies.adipiscing@protonmail.edu','2022-04-05 10:40:11',10),
+  ('Kai Banks','sodales.elit.erat@outlook.ca','2022-11-13 17:26:28',2),
+  ('Isabelle Walton','tellus@icloud.ca','2022-12-20 00:32:19',6),
+  ('Xandra Atkins','dolor.fusce@icloud.com','2022-07-21 03:19:53',7),
+  ('Briar Sosa','curabitur@protonmail.ca','2022-09-16 11:06:57',8),
+  ('Jamal Mcguire','placerat.eget@hotmail.ca','2021-11-04 05:57:17',7),
+  ('Idola Nguyen','et.rutrum@hotmail.couk','2023-09-24 19:41:37',3),
+  ('Grace Owens','ac@aol.net','2023-03-11 20:56:52',1),
+  ('Igor Cross','urna@aol.org','2021-12-14 10:18:31',9),
+  ('Neil Frye','eget.odio.aliquam@icloud.couk','2021-01-17 16:12:01',5),
+  ('Farrah Hunt','diam.at@hotmail.edu','2020-11-20 09:36:30',4),
+  ('Russell Curtis','lorem.eget@outlook.net','2021-03-17 09:13:56',1),
+  ('Reuben Watkins','vitae.sodales.at@protonmail.org','2021-11-13 19:52:36',3),
+  ('Charles Cummings','non.bibendum@outlook.ca','2021-09-12 22:15:10',8),
+  ('Timon Barber','sem.elit@hotmail.couk','2021-02-15 19:51:19',9),
+  ('Cleo Smith','ante@outlook.net','2022-08-08 18:55:32',7),
+  ('Petra Singleton','nunc.ac@icloud.org','2022-07-03 02:34:43',3),
+  ('Price Nash','eros.non.enim@google.edu','2021-05-20 02:35:48',3),
+  ('Denise Herman','et@outlook.couk','2023-07-11 12:37:01',2),
+  ('Jasmine Guerrero','aliquet.molestie.tellus@aol.edu','2023-02-11 16:37:39',8),
+  ('Brynn Vincent','consequat.nec.mollis@protonmail.edu','2021-05-28 01:49:07',9),
+  ('Ferdinand Hansen','phasellus.ornare@aol.org','2022-09-13 20:48:24',10),
+  ('Randall Page','pede@aol.org','2023-04-02 06:45:26',4),
+  ('Chandler Pace','nibh.sit.amet@yahoo.couk','2021-11-11 08:28:32',6),
+  ('Kyla Hickman','erat@aol.net','2022-10-14 13:37:33',10),
+  ('Arsenio Crosby','massa.integer@aol.couk','2021-01-12 13:44:50',2),
+  ('Amber Barrera','sagittis.felis@google.com','2022-08-10 13:44:07',4),
+  ('MacKensie Snider','et.arcu@protonmail.ca','2023-02-01 16:50:58',3),
+  ('Brandon Savage','odio.auctor.vitae@protonmail.com','2021-03-16 06:23:08',8),
+  ('Abbot Hill','turpis.aliquam@yahoo.ca','2022-04-12 12:48:57',6),
+  ('Olga Hardin','neque@hotmail.ca','2021-11-25 20:02:21',7),
+  ('Brady Donaldson','lorem@yahoo.ca','2021-11-12 03:00:17',3),
+  ('Zena Sanchez','dolor.elit@icloud.com','2022-02-19 11:11:50',7),
+  ('Roary Reed','dolor@icloud.com','2021-03-15 04:16:13',3),
+  ('Keith Atkins','ornare@aol.edu','2021-09-02 18:56:59',2),
+  ('Amena Black','ipsum.donec.sollicitudin@icloud.edu','2021-06-05 01:24:56',1),
+  ('Noel Kirkland','bibendum.fermentum.metus@hotmail.net','2022-06-19 03:35:27',5),
+  ('Chantale Castro','egestas.blandit@google.edu','2020-12-11 04:13:48',3),
+  ('Ruby Simmons','congue.turpis@google.couk','2022-07-25 09:41:37',9),
+  ('Jeremy Richardson','quam.elementum.at@google.couk','2021-07-17 02:08:03',1),
+  ('Justine Bauer','aenean.gravida@outlook.com','2021-06-19 00:06:54',6),
+  ('Len Beach','nec.tempus.scelerisque@google.net','2021-04-09 07:54:05',7),
+  ('Kelly Alston','varius.ultrices.mauris@icloud.edu','2022-01-10 15:09:34',8),
+  ('Karleigh Franklin','molestie.in@yahoo.edu','2023-10-01 15:42:21',9);
+INSERT INTO [tb_empleado] (nombre,email,fecha,idcategoria)
+VALUES
+  ('Aline Larson','magna.sed.eu@icloud.ca','2023-03-26 02:05:48',9),
+  ('Lois Daniels','ligula@google.couk','2022-12-08 21:18:07',2),
+  ('Richard Allison','ligula@outlook.couk','2022-07-19 19:52:54',10),
+  ('Kato Snider','lectus.nullam@outlook.com','2023-09-12 19:37:29',4),
+  ('Adam Ellison','dapibus.id@icloud.org','2023-07-27 12:50:32',6),
+  ('Aquila Brady','eu.nulla@google.com','2022-01-12 20:15:20',3),
+  ('Dorian Macdonald','lacus.pede.sagittis@outlook.edu','2020-11-22 00:18:54',3),
+  ('Ralph Pate','purus@hotmail.com','2021-12-18 16:25:10',6),
+  ('Angelica Ortega','nullam.ut.nisi@aol.ca','2020-11-10 02:58:50',4),
+  ('Kyra Rojas','a.purus@yahoo.net','2021-10-11 01:08:29',5),
+  ('Ali Woods','penatibus.et@aol.org','2023-09-30 20:18:42',2),
+  ('Juliet Kemp','amet.luctus@protonmail.couk','2022-12-14 09:22:37',8),
+  ('Brady Gould','tellus.faucibus@icloud.net','2022-06-13 06:54:10',7),
+  ('Jared Wyatt','rutrum@hotmail.org','2021-07-12 01:59:15',4),
+  ('Quynn Lowe','quisque@yahoo.couk','2023-04-21 18:28:23',6),
+  ('Thane Wade','sit.amet@hotmail.com','2021-06-28 21:42:00',8),
+  ('Christian Walters','nisi.magna@protonmail.couk','2022-05-11 02:35:45',10),
+  ('Yuli Campos','rutrum.urna@hotmail.edu','2022-12-31 07:37:15',7),
+  ('Ima Kim','curae.donec.tincidunt@yahoo.ca','2021-10-10 17:53:22',10),
+  ('Calvin Richmond','gravida@icloud.couk','2022-03-01 03:19:56',8),
+  ('Herrod Hull','varius.ultrices.mauris@protonmail.org','2021-09-03 11:14:44',7),
+  ('Merrill Stein','molestie.in.tempus@outlook.org','2022-03-24 05:22:32',10),
+  ('Audra House','auctor.velit@google.org','2021-05-13 12:29:13',7),
+  ('Jocelyn Tanner','id.sapien@yahoo.net','2021-07-10 02:19:31',8),
+  ('Griffin Ryan','mollis.vitae@google.ca','2021-12-29 06:14:14',7),
+  ('Addison Vazquez','id.risus@icloud.com','2023-05-04 13:20:32',7),
+  ('Alexis Woodard','orci.phasellus.dapibus@hotmail.couk','2022-01-30 09:04:01',4),
+  ('Stewart Jefferson','mauris.eu@hotmail.com','2022-01-09 01:52:35',4),
+  ('Lance Acevedo','pede@google.ca','2021-08-03 21:18:31',8),
+  ('Owen Caldwell','commodo.ipsum@yahoo.couk','2022-02-22 13:42:06',9),
+  ('Christen Hill','sem.vitae@outlook.ca','2022-06-25 13:54:17',1),
+  ('Hadassah Aguirre','natoque.penatibus@yahoo.ca','2022-04-01 04:50:51',5),
+  ('Jamalia Espinoza','penatibus.et.magnis@protonmail.net','2022-01-21 01:47:10',9),
+  ('Hu Larson','arcu.aliquam.ultrices@yahoo.org','2022-07-12 18:40:50',7),
+  ('Nita Hutchinson','nunc.quisque@google.couk','2023-05-19 23:29:20',3),
+  ('Bradley Gill','non.leo@protonmail.couk','2023-05-26 09:48:50',9),
+  ('Mercedes Davenport','tristique.pellentesque@protonmail.org','2022-02-17 17:18:35',2),
+  ('Fiona Wilkerson','pharetra.quisque@aol.org','2022-11-25 03:21:02',6),
+  ('Wing Ball','sapien@aol.net','2021-08-19 05:18:11',3),
+  ('Beverly King','eleifend@yahoo.ca','2021-10-28 21:41:09',4),
+  ('Charles Williams','sit.amet.dapibus@yahoo.net','2021-01-31 08:39:54',8),
+  ('Axel Gamble','nulla.cras@hotmail.edu','2021-06-09 15:02:29',3),
+  ('Lucy Sanford','a.malesuada.id@yahoo.com','2022-02-07 18:41:17',9),
+  ('Zoe Mays','ipsum@yahoo.com','2021-06-18 13:14:34',3),
+  ('Mufutau Conway','ornare.placerat@hotmail.org','2023-03-28 22:04:22',5),
+  ('Rigel Fernandez','libero@google.net','2023-06-20 14:19:51',4),
+  ('Camden Anthony','tempus.lorem@icloud.ca','2023-06-04 14:58:06',10),
+  ('Chancellor Mays','molestie.orci@google.ca','2022-08-25 04:26:40',3),
+  ('Brock Kennedy','quisque@protonmail.ca','2021-03-20 18:52:09',9),
+  ('Murphy Mcfarland','mauris.blandit@yahoo.ca','2022-11-18 00:13:07',2);
+
+
+  select * from tb_empleado 
+  go
+  select * from tb_categoria
+  go

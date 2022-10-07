@@ -1,0 +1,30 @@
+Use Practicando1
+go
+
+
+  select * from tb_empleado 
+  go
+  select * from tb_categoria
+  go
+
+
+
+create or alter proc usp_listar_empleado
+as 
+select e.tb_empleadoID ,e.nombre, e.email , e.fecha , c.descripcioncate  from  tb_empleado as e  join  tb_categoria as c 
+on e.idcategoria = c.idcategoria
+go
+exec usp_listar_empleado
+go
+
+
+create or alter proc usp_busqueda_empleado
+@nombre varchar (50)
+as 
+select @nombre = RTRIM (@nombre) + '%';
+select e.tb_empleadoID ,e.nombre, e.email , e.fecha , c.descripcioncate  from  tb_empleado as e  join  tb_categoria as c 
+on e.idcategoria = c.idcategoria
+where   nombre like   @nombre 
+go
+exec usp_busqueda_empleado 'a'
+go
